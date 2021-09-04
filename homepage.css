@@ -48,11 +48,12 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 1%;
+    cursor: pointer;
 }
-.dry-foods{
+/* .dry-foods{
     border-bottom: 5px solid #006CB4;
     border-radius: 5px;
-}
+} */
 .part4{
     margin-top: 50px;
     height: 5.5%;
@@ -94,6 +95,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+#myText{
+    height: 30px;
+    width: 350px;
+    border: none;
+    background: transparent;
+    outline: 0;
+    font-size: 15px;
 }
 .b{
     height: 50px;
@@ -157,6 +166,7 @@
     padding-left: 50px;
 }
 .learnMore .buttonLM{
+    cursor: pointer;
     height: 35px;
     width: 170px;
     display: flex;
@@ -205,6 +215,7 @@
     
 }
 .cart{
+    cursor: pointer;
     background-color: #006CB4;
     height: 50px;
     width: 15%;
@@ -230,6 +241,7 @@
 .sign-out{
     font-size: 15px;
     color: red;
+    cursor: pointer;
 }
 .portion2{
     margin-top: 50px;
@@ -240,6 +252,7 @@
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 .head{
     color: white;
@@ -263,6 +276,7 @@
 .add{
     font-size: 14px;
     font-weight: 600;
+    cursor: pointer;
 }
 .heading{
     height: 20%;
@@ -295,6 +309,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    cursor: pointer;
 }
 .name-product{
     font-weight: bold;
@@ -319,12 +334,10 @@
     width: 0.1px;
 }
 
-/* .column2:hover::-webkit-scrollbar-thumb {
-    width: 8px;
-} */
+
 
 .column1::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
  
 .column1::-webkit-scrollbar-track {
@@ -332,7 +345,7 @@
     border-radius: 10px;
 }
 
-/* Optional: show position indicator in red */
+
 .column1::-webkit-scrollbar-thumb {
     background:#006CB4;
     border-radius: 10px;
