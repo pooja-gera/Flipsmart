@@ -41,7 +41,7 @@
     margin-bottom: 25px;
 }
 
-.dry-foods, .spices, .fresh-produce, .meat, .frozen-foods, .beverages, .bakery, .toiletries, .other{
+.dry-foods, .spices, .fresh-produce, .meat, .frozen-foods, .beverages, .bakery, .toiletries, .all{
     width: 11.11%;
     border-bottom: 1px solid #006CB4;
     display: flex;
@@ -50,10 +50,10 @@
     padding-bottom: 1%;
     cursor: pointer;
 }
-/* .dry-foods{
+.active{
     border-bottom: 5px solid #006CB4;
     border-radius: 5px;
-} */
+}
 .part4{
     margin-top: 50px;
     height: 5.5%;
@@ -62,7 +62,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.part5{
+.part5, .part5>div{
     width: 100%;
     height: fit-content;
     padding: 3% 0%;
