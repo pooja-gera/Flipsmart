@@ -87,6 +87,9 @@
 .description-name{
     font-size: 14px;
 }
+.description-addToCart{
+    cursor: pointer;
+}
 .search{
     height: 100%;
     width: 40%;

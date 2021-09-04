@@ -4,6 +4,11 @@ let spices = document.querySelector(".spices");
 let choose = document.querySelectorAll(".choose");
 const part5 = document.querySelector(".part5")
 console.log(choose);
+let prevCart = JSON.parse(localStorage.getItem("cart"));
+let cartObject = {};
+if(prevCart){
+    cartObject = prevCart;
+}
 
 (function init() {
     let wrapper = document.createElement("div");
@@ -19,9 +24,24 @@ console.log(choose);
                        
                         <div class="description-addToCart">
                             <img src="images/blue-add.png" alt="" srcset="">
+                            <i class="fas fa-check" style = "display: none;"></i>
                         </div>
                     </div>`
-                    wrapper.appendChild(pdDiv)
+                let cartButton = pdDiv.querySelector(".description-addToCart img");
+                let checkButton = pdDiv.querySelector(".fas");
+                cartButton.addEventListener("click", function(){
+                    cartButton.style.display = "none";
+                    checkButton.style.display = "block";
+                    cartObject[data[i][1]] = data[i];
+                    localStorage.setItem("cart", JSON.stringify(cartObject));
+                });
+                checkButton.addEventListener("click", function(){
+                    cartButton.style.display = "block";
+                    checkButton.style.display = "none";
+                    delete cartObject[data[i][1]];
+                    localStorage.setItem("cart", JSON.stringify(cartObject));
+                });
+                wrapper.appendChild(pdDiv)
     }
     part5.appendChild(wrapper);
 })()
