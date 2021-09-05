@@ -41,7 +41,7 @@
     margin-bottom: 25px;
 }
 
-.dry-foods, .spices, .fresh-produce, .meat, .frozen-foods, .beverages, .bakery, .toiletries, .all{
+.choose{
     width: 11.11%;
     border-bottom: 1px solid #006CB4;
     display: flex;
@@ -80,12 +80,27 @@
     box-shadow: 0px 5px rgba(0, 0, 0, 0.26);
     margin-bottom: 40px;
 }
+.star img{
+    height: 15px;
+    width: 15px;
+}
+#sortBy{
+    font-weight: 600;
+    font-size: 13px;
+    color: #006CB4;
+}
+#sort{
+    border: none;
+    outline: none;
+    background: transparent;
+}
 .product-description span{
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
 }
 .description-name{
-    font-size: 14px;
+    font-size: 12px;
+    
 }
 .description-addToCart{
     cursor: pointer;
@@ -98,6 +113,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+.text1 span{
+    margin-right: 10px;
 }
 #myText{
     height: 30px;
@@ -131,9 +149,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 10px;
 }
 .text1{
-    
+    display: flex;
+    align-items: center;
+    width: 100%;
     font-size: 13px;
 }
 #rate{
