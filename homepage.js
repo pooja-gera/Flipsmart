@@ -23,7 +23,7 @@ function init() {
         pdDiv.setAttribute("data-id", data[i][1]);
         pdDiv.classList.add(filteredArr[i][3].split(" ").join(""));
         pdDiv.innerHTML = ` <div class="a">
-                        <img src="images/product1.png" alt="" srcset="">
+                        <img src="${filteredArr[i][4]}" alt="" srcset="">
                     </div>
                     <div class="b">
                         <div class="description-name"><span>${filteredArr[i][0].toUpperCase()}</span> <br> Rs. ${filteredArr[i][2]}</div>

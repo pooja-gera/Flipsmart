@@ -84,6 +84,20 @@
     height: 15px;
     width: 15px;
 }
+.a img{
+    max-height: 100%;
+    
+    object-fit: cover;
+}
+.a{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+   
+    object-fit: cover;
+    overflow: hidden;
+}
 #sortBy{
     font-weight: 600;
     font-size: 13px;
