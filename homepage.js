@@ -38,7 +38,7 @@ function init() {
         cartButton.addEventListener("click", function () {
             cartButton.style.display = "none";
             checkButton.style.display = "block";
-            cartObject[data[i][1]] = filteredArr[i];
+            cartObject[data[i][1]] = [...filteredArr[i], 1];
             localStorage.setItem("cart", JSON.stringify(cartObject));
         });
         checkButton.addEventListener("click", function () {
