@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/signIn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="portion1">
+                <div class="logo">
+                    <i class="fas fa-user-alt"></i>
+                </div>
+                <div class="auth">
+                    <div class="sign-in">Sign In</div>
+                    <div class="sign-up">Sign Up</div>
+                </div>
+            </div>
+            <div class="portion2">
+                <h1>Hello Beautiful,</h1>
+                <p>Enter your details below to create your account <br> or login with social media accounts.
+                </p>
+               
+            </div>
+            <div class="portion3">
+                <form action="">
+                    
+                    <label for="Email">Email</label>
+                    <input type="email" name="" id="Email">
+                    <label for="Pwd">Password</label>
+                    <input type="password" name="" id="Pwd">
+                    <span id="message"></span>
+    
+                </form>
+            </div>
+            <!-- <div class="portion4">
+                <div class="Google">
+                    <img src="images/google.webp" alt="" srcset="">
+                </div>
+                <div class="facebook">
+                    <img src="images/facebook.webp" alt="" srcset="">
+                </div>
+            
+            </div> -->
+            <div class="portion5">
+                <div class="arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+    <script src="./javascript/firebase.js"></script>
+    <script src="./javascript/signInScript.js"></script>
+</body>
+</html>

@@ -4,6 +4,27 @@ let spices = document.querySelector(".spices");
 let choose = document.querySelectorAll(".choose");
 let myText = document.querySelector("#myText");
 let sort = document.querySelector("#sort");
+let signout = document.querySelector(".sign-out");
+let cart = document.querySelector(".cart");
+
+cart.addEventListener("click", cartHandler);
+
+function cartHandler(){
+    window.location.href = "/cart";
+}
+
+signout.addEventListener("click", signOutHandler);
+
+async function signOutHandler(){
+    try{
+        await firebase.auth().signOut();
+        window.location.href = "/signIn";
+    }
+    catch(err){
+        alert("Unable to sign out!");
+        console.log(err);
+    }
+}
 
 const part5 = document.querySelector(".part5");
 console.log(choose);

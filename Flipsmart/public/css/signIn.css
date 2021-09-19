@@ -1,0 +1,156 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Karla';
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: yellowgreen; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f3f3f;
+    
+}
+.box{
+    height: 80%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    padding:2%
+}
+.portion1{
+    height: 10%;
+    width: 100%;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.logo{
+    height: 30px;
+    width: 30px;
+   border-radius: 10px;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006CB4;
+    color:  #FFCD00;
+}
+
+.auth{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.sign-in, .sign-up{
+    font-family: 'Karla';
+    font-weight: 600;
+    cursor: pointer;
+}
+.sign-in{
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+    border-radius: 2px;
+    
+}
+.portion2{
+    height: 30%;
+    width: 100%;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    
+}
+.portion2 span{
+    font-family: 'Karla';
+}
+.portion2 h1{
+    font-family: 'Karla';
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.portion2 p{
+    font-family: 'Zilla Slab';
+    font-size: 14px;
+}
+.portion3{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+input{
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid  rgba(128,128,128,0.692);
+    width: 300px;
+    margin-bottom: 30px;
+    font-size: small;
+    font-weight: 600;
+    color: gray;  
+    outline: none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Karla';
+    padding-bottom: 40px;
+}
+.portion4{
+    height: 20%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 37%;
+    padding-right: 37%;
+}
+.facebook img{
+    height: 30px;
+}
+.Google img{
+    height: 30px;
+}
+.portion5{
+    height: 20%;
+    width: 100%;
+  
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 4%;
+    padding-right: 3%;
+}
+.arrow{
+    height: 70%;
+    width: 20%;
+    background-color: #006CB4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  #FFCD00;
+    cursor: pointer;
+}
+.arrow .fas{
+    font-size: 20px;
+}
+
