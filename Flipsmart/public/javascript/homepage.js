@@ -6,21 +6,40 @@ let myText = document.querySelector("#myText");
 let sort = document.querySelector("#sort");
 let signout = document.querySelector(".sign-out");
 let cart = document.querySelector(".cart");
+let picUpload = document.querySelector(".details .pic img");
+let nameOfPerson = document.querySelector(".details .User .name");
 
+
+console.log(firebase.auth().currentUser);
+let uuid = localStorage.getItem("uuid");
+console.log(uuid);
+async function photoUpload() {
+    try {
+        let obj = await firebase.firestore().collection("user").doc(JSON.parse(uuid)).get();
+        let data = await obj.data();
+        console.log(obj, data);
+        picUpload.setAttribute("src", data.dp);
+        nameOfPerson.innerHTML = data.name;
+    }
+    catch (err) {
+        console.log(err);
+    }
+
+}
 cart.addEventListener("click", cartHandler);
-
-function cartHandler(){
+photoUpload();
+function cartHandler() {
     window.location.href = "/cart";
 }
 
 signout.addEventListener("click", signOutHandler);
 
-async function signOutHandler(){
-    try{
+async function signOutHandler() {
+    try {
         await firebase.auth().signOut();
         window.location.href = "/signIn";
     }
-    catch(err){
+    catch (err) {
         alert("Unable to sign out!");
         console.log(err);
     }
@@ -83,55 +102,55 @@ for (let i = 0; i < choose.length; i++) {
 
 sort.addEventListener("change", sortHandler);
 
-function priceLTH(a,b){
-    if(a[2]>=b[2]){
+function priceLTH(a, b) {
+    if (a[2] >= b[2]) {
         return 1;
     }
-    else{
+    else {
         return -1;
     }
 }
-function priceHTL(a,b){
-    if(a[2]<=b[2]){
+function priceHTL(a, b) {
+    if (a[2] <= b[2]) {
         return 1;
     }
-    else{
-        return -1;
-    }
-}
-
-function alphaATZ(a,b){
-    if(a[0]>=b[0]){
-        return 1;
-    }
-    else{
+    else {
         return -1;
     }
 }
 
-function alphaZTA(a,b){
-    if(a[0]<=b[0]){
+function alphaATZ(a, b) {
+    if (a[0] >= b[0]) {
         return 1;
     }
-    else{
+    else {
         return -1;
     }
 }
 
-function sortHandler(e){
+function alphaZTA(a, b) {
+    if (a[0] <= b[0]) {
+        return 1;
+    }
+    else {
+        return -1;
+    }
+}
+
+function sortHandler(e) {
     let sortValue = e.currentTarget.value;
-    if(sortValue == "plth"){
+    if (sortValue == "plth") {
         filteredArr.sort(priceLTH);
     }
-    else if(sortValue == "phtl"){
+    else if (sortValue == "phtl") {
         filteredArr.sort(priceHTL);
     }
-    else if(sortValue == "atz"){
+    else if (sortValue == "atz") {
         filteredArr.sort(alphaATZ);
-    }else{
+    } else {
         filteredArr.sort(alphaZTA);
     }
-    part5.innerHTML= ""
+    part5.innerHTML = ""
     init();
 }
 
@@ -168,7 +187,7 @@ function searchHelper(value) {
 function searchHandler(e) {
     let value = e.target.value;
     searchHelper(value);
-    for(let i=0;i<choose.length;i++){
+    for (let i = 0; i < choose.length; i++) {
         choose[i].classList.remove("active");
     }
     choose[0].classList.add("active");

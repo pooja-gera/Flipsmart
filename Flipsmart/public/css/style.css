@@ -3203,6 +3203,7 @@
 	line-height: 18px;
 	font-size: 13px;
 	color: #fff;
+	background-color:#072654;
 }
 /*======================================
    End Shopping Cart CSS
@@ -3276,6 +3277,9 @@
 	width: 100%;
 	height: 300px;
 	overflow: scroll;
+}
+.PaymentButton-contents{
+	width: 258px;
 }
 .shop.checkout .nice-select .list li{}
 .shop.checkout .nice-select .list li.option{

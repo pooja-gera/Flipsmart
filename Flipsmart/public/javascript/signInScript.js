@@ -14,6 +14,7 @@ submit.addEventListener("click", submitHandler);
 async function submitHandler(){
     try{
         let pakad = await firebase.auth().signInWithEmailAndPassword(email.value,pwd.value);
+        localStorage.setItem("uuid", JSON.stringify(pakad.user.uid));
         window.location.href = "/productsPage";
     } 
     catch(err){
