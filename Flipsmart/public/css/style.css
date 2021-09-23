@@ -3194,6 +3194,18 @@
 	display:inline-block;
 	float:right;
 }
+.home-ashi{
+	color: #006cb4;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.home-ashi span{
+	margin-left: 12px;
+	font-size: 12px;
+	font-family: fontawesome;
+	color: #006cb4;
+	cursor: pointer;
+}
 .shopping-cart .total-amount .right .button5 .btn {
 	text-align: center;
 	border-radius: 0;

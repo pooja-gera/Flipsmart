@@ -3,6 +3,8 @@ let check_shipping = false;
 let cartSubtotal = document.querySelector(".cart-subtotal span");
 let youPay = document.querySelector(".last span");
 let shipping = document.querySelector(".shipping span");
+let continueShopping = document.querySelector(".continue");
+let backCart = document.querySelector(".home-ashi");
 console.log(youPay);
 let items = JSON.parse(localStorage.getItem("cart"));
 let cartSubValue = 0;
@@ -105,4 +107,13 @@ if(cartSubValue <= 1000){
 cartSubtotal.innerHTML = "Rs. " + cartSubValue;
 youPay.innerHTML = "Rs. " + (cartSubValue + (check_shipping && cartSubValue > 0 ? 50 : 0));
 tbody.appendChild(tr)
+}
+
+continueShopping.addEventListener("click", continueHandler);
+backCart.addEventListener("click", backCartHandler);
+function backCartHandler(){
+    window.location.href = "/";
+}
+function continueHandler(){
+    window.location.href = "/productsPage";
 }

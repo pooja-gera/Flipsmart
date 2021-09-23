@@ -144,8 +144,23 @@
     outline: 0;
     font-size: 15px;
 }
+.api-in{
+    font-size: 12px;
+    color: red;
+}
+.rectangle .backToHome{
+    color: #006CB4;
+    position: relative;
+    top: -40px;
+    left: 30px;
+    font-size: 20px;
+    
+}
+.rectangle i{
+    margin-right: 20px;
+}
 .b{
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;

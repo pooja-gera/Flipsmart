@@ -8,10 +8,16 @@ let signout = document.querySelector(".sign-out");
 let cart = document.querySelector(".cart");
 let picUpload = document.querySelector(".details .pic img");
 let nameOfPerson = document.querySelector(".details .User .name");
+let backToHome = document.querySelector(".rectangle .backToHome");
+
+
 
 
 console.log(firebase.auth().currentUser);
 let uuid = localStorage.getItem("uuid");
+if(!uuid){
+    window.location.href = "/signIn";
+}
 console.log(uuid);
 async function photoUpload() {
     try {
@@ -37,6 +43,7 @@ signout.addEventListener("click", signOutHandler);
 async function signOutHandler() {
     try {
         await firebase.auth().signOut();
+        localStorage.setItem("uuid", "");
         window.location.href = "/signIn";
     }
     catch (err) {
@@ -66,7 +73,7 @@ function init() {
                         <img src="${filteredArr[i][4]}" alt="" srcset="">
                     </div>
                     <div class="b">
-                        <div class="description-name"><span>${filteredArr[i][0].toUpperCase()}</span> <br> Rs. ${filteredArr[i][2]}</div>
+                        <div class="description-name"><span>${filteredArr[i][0].toUpperCase()}</span> <br> <span> 1 kg </span> <br> Rs. ${filteredArr[i][2]} </div>
                        
                         <div class="description-addToCart">
                             <img src="images/blue-add.png" alt="" srcset="">
@@ -75,6 +82,14 @@ function init() {
                     </div>`
         let cartButton = pdDiv.querySelector(".description-addToCart img");
         let checkButton = pdDiv.querySelector(".fas");
+        if(cartObject[data[i][1]]){
+            cartButton.style.display = "none";
+            checkButton.style.display = "block";
+        }
+        else {
+            cartButton.style.display = "block";
+            checkButton.style.display = "none";
+        }
         cartButton.addEventListener("click", function () {
             cartButton.style.display = "none";
             checkButton.style.display = "block";
@@ -199,4 +214,14 @@ function searchHandler(e) {
 function learnMoreBtnHandler() {
     window.location.href = "/learnMore";
 }
+backToHome.addEventListener("click", backButton);
+function backButton(){
+    window.location.href = "/";
+}
 
+let arrML = [];
+async function newUserHandling(){
+    let res = await axios.get("https://pastpurchaseflipsmart.azurewebsites.net/predict/yams");
+    console.log(res.data);
+}
+newUserHandling();
