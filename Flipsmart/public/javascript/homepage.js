@@ -9,13 +9,60 @@ let cart = document.querySelector(".cart");
 let picUpload = document.querySelector(".details .pic img");
 let nameOfPerson = document.querySelector(".details .User .name");
 let backToHome = document.querySelector(".rectangle .backToHome");
+let productsDiv = document.querySelector(".products");
+let similarUsers = [];
+let similarProducts = [];
+let pastPurchase = [];
+let newUser = [];
+
+async function newUserHandler() {
+    let res = await axios.get("https://flipsmartnewusers.azurewebsites.net/predict");
+    for (let x in res.data) {
+        let y = [res.data[x].item, JSON.parse(x), JSON.parse(res.data[x].price), res.data[x].imgLink, res.data[x].size, 1];
+        newUser.push(y);
+    }
+    console.log(newUser);
+    setNewUser();
+}
+newUserHandler();
 
 
+async function similarProductsHandler(){
+    let res = await axios.get("https://flipsmartsimilarproduct.azurewebsites.net/predict/yams")
+}
+similarProductsHandler();
+
+
+
+
+function setNewUser() {
+    for (let i = 0; i < newUser.length; i++) {
+        let product = document.createElement("div");
+        product.classList.add("product");
+        product.innerHTML = `
+        
+            <div class="image">
+                <img src="${newUser[i][3]}" alt="" srcset=""> </img>
+            </div>
+            <div class="product-details">
+                <div class="name-product">${newUser[i][0].toUpperCase()} <span>(${newUser[i][4]})</span></div>
+                <div class="amount">Rs. ${newUser[i][2]}</div>
+                <div class="api-in">New User Recommendation</div>
+            </div>
+            <div class="add-to-cart">
+                <img src="./images/add to cart.png" alt="" srcset="">
+                <i class ="fas fa-check" style = "display: none;"></i>
+            </div>
+        `
+        productsDiv.appendChild(product);
+        
+    }
+}
 
 
 console.log(firebase.auth().currentUser);
 let uuid = localStorage.getItem("uuid");
-if(!uuid){
+if (!uuid) {
     window.location.href = "/signIn";
 }
 console.log(uuid);
@@ -73,7 +120,7 @@ function init() {
                         <img src="${filteredArr[i][4]}" alt="" srcset="">
                     </div>
                     <div class="b">
-                        <div class="description-name"><span>${filteredArr[i][0].toUpperCase()}</span> <br> <span> 1 kg </span> <br> Rs. ${filteredArr[i][2]} </div>
+                        <div class="description-name"><span>${filteredArr[i][0].toUpperCase()}</span> <br> <span> ${filteredArr[i][5]} </span> <br> Rs. ${filteredArr[i][2]} </div>
                        
                         <div class="description-addToCart">
                             <img src="images/blue-add.png" alt="" srcset="">
@@ -82,7 +129,7 @@ function init() {
                     </div>`
         let cartButton = pdDiv.querySelector(".description-addToCart img");
         let checkButton = pdDiv.querySelector(".fas");
-        if(cartObject[data[i][1]]){
+        if (cartObject[filteredArr[i][1]]) {
             cartButton.style.display = "none";
             checkButton.style.display = "block";
         }
@@ -176,7 +223,8 @@ function chooseButtonHandler(e) {
     e.currentTarget.classList.add("active");
     part5.innerHTML = "";
     if (e.currentTarget.classList[0] == "all") {
-        init(data)
+        filteredArr = data;
+        init()
         return
     }
     filteredArr = data.filter(obj => {
@@ -215,13 +263,9 @@ function learnMoreBtnHandler() {
     window.location.href = "/learnMore";
 }
 backToHome.addEventListener("click", backButton);
-function backButton(){
+function backButton() {
     window.location.href = "/";
 }
 
-let arrML = [];
-async function newUserHandling(){
-    let res = await axios.get("https://pastpurchaseflipsmart.azurewebsites.net/predict/yams");
-    console.log(res.data);
-}
-newUserHandling();
+
+

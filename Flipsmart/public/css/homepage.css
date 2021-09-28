@@ -148,6 +148,10 @@
     font-size: 12px;
     color: red;
 }
+.product .image img{
+    height: 50px;
+    width: 50px;
+}
 .rectangle .backToHome{
     color: #006CB4;
     position: relative;
