@@ -18,36 +18,39 @@ let newUser = [];
 async function newUserHandler() {
     let res = await axios.get("https://flipsmartnewusers.azurewebsites.net/predict");
     for (let x in res.data) {
-        let y = [res.data[x].item, JSON.parse(x), JSON.parse(res.data[x].price), res.data[x].imgLink, res.data[x].size, 1];
+        let y = [res.data[x].item, JSON.parse(x), JSON.parse(res.data[x].price), , res.data[x].imgLink, res.data[x].size, 1, res.data[x].api];
         newUser.push(y);
     }
     console.log(newUser);
-    setNewUser();
+    setNewUser(newUser);
 }
-newUserHandler();
+// newUserHandler();
 
 
-async function similarProductsHandler(){
-    let res = await axios.get("https://flipsmartsimilarproduct.azurewebsites.net/predict/yams")
+async function similarProductsHandler(product_name){
+    let res = await axios.get(`https://flipsmartsimilarproduct.azurewebsites.net/predict/${product_name}`);
+    console.log(res.data);
+    
+    let y = [res.data.item, JSON.parse(res.data.id), JSON.parse(res.data.price), , res.data.imgLink, res.data.size, 1, res.data.api];
+        similarProducts.push(y);
+        console.log(similarProducts);
+        setNewUser(similarProducts);
 }
-similarProductsHandler();
 
 
-
-
-function setNewUser() {
+function setNewUser(newUser) {
     for (let i = 0; i < newUser.length; i++) {
         let product = document.createElement("div");
         product.classList.add("product");
         product.innerHTML = `
         
             <div class="image">
-                <img src="${newUser[i][3]}" alt="" srcset=""> </img>
+                <img src="${newUser[i][4]}" alt="" srcset=""> </img>
             </div>
             <div class="product-details">
-                <div class="name-product">${newUser[i][0].toUpperCase()} <span>(${newUser[i][4]})</span></div>
+                <div class="name-product">${newUser[i][0].toUpperCase()} <span>(${newUser[i][5]})</span></div>
                 <div class="amount">Rs. ${newUser[i][2]}</div>
-                <div class="api-in">New User Recommendation</div>
+                <div class="api-in">${newUser[i][7].toUpperCase()}</div>
             </div>
             <div class="add-to-cart">
                 <img src="./images/add to cart.png" alt="" srcset="">
@@ -66,6 +69,9 @@ if (!uuid) {
     window.location.href = "/signIn";
 }
 console.log(uuid);
+if(uuid == '"gyEPIe1VGqfdVjrMSzSYwaPFki62"'){
+    newUserHandler();
+}
 async function photoUpload() {
     try {
         let obj = await firebase.firestore().collection("user").doc(JSON.parse(uuid)).get();
@@ -142,6 +148,7 @@ function init() {
             checkButton.style.display = "block";
             cartObject[data[i][1]] = [...filteredArr[i], 1];
             localStorage.setItem("cart", JSON.stringify(cartObject));
+            similarProductsHandler(filteredArr[i][0])
         });
         checkButton.addEventListener("click", function () {
             cartButton.style.display = "block";
