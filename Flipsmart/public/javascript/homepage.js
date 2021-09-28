@@ -14,6 +14,46 @@ let similarUsers = [];
 let similarProducts = [];
 let pastPurchase = [];
 let newUser = [];
+let addAll = document.querySelector(".portion4");
+
+addAll.addEventListener("click", addAllHandler);
+
+function addAllHandler() {
+    let allDabbaCart = productsDiv.querySelectorAll(".add-to-cart img");
+    let allDabbaTick = productsDiv.querySelectorAll(".product .fas");
+
+    for (let i = 0; i < allDabbaCart.length; i++) {
+        allDabbaCart[i].style.display = "none";
+        allDabbaTick[i].style.display = "block";
+    }
+
+    
+
+    for(let j=0;j<similarProducts.length;j++){
+        cartObject[similarProducts[j][1]] = similarProducts[j];
+        localStorage.setItem("cart", JSON.stringify(cartObject));
+    }
+
+    for(let j=0;j<similarUsers.length;j++){
+        cartObject[similarUsers[j][1]] = similarUsers[j];
+        localStorage.setItem("cart", JSON.stringify(cartObject));
+    }
+
+    for(let j=0;j<pastPurchase.length;j++){
+        cartObject[pastPurchase[j][1]] = pastPurchase[j];
+        localStorage.setItem("cart", JSON.stringify(cartObject));
+    }
+    for(let j=0;j<newUser.length;j++){
+        cartObject[newUser[j][1]] = newUser[j];
+        localStorage.setItem("cart", JSON.stringify(cartObject));
+    }
+
+
+
+
+
+
+}
 
 async function newUserHandler() {
     let res = await axios.get("https://flipsmartnewusers.azurewebsites.net/predict");
@@ -27,18 +67,18 @@ async function newUserHandler() {
 // newUserHandler();
 
 
-async function similarProductsHandler(product_name){
+async function similarProductsHandler(product_name) {
     let res = await axios.get(`https://flipsmartsimilarproduct.azurewebsites.net/predict/${product_name}`);
     console.log(res.data);
     let temp = []
     let y = [res.data.item, JSON.parse(res.data.id), JSON.parse(res.data.price), , res.data.imgLink, res.data.size, 1, res.data.api];
-        similarProducts.push(y);
-        temp.push(y)
-        console.log(similarProducts);
-        setNewUser(temp);
+    similarProducts.push(y);
+    temp.push(y)
+    console.log(similarProducts);
+    setNewUser(temp);
 }
 
-async function similarUsersHandler(product_name){
+async function similarUsersHandler(product_name) {
     let res = await axios.get(`https://flipsmartsimilarusers.azurewebsites.net/predict/${product_name}`);
     console.log(res.data);
     let temp = []
@@ -51,7 +91,7 @@ async function similarUsersHandler(product_name){
     setNewUser(temp);
 }
 
-async function pastPurchaseHandler(product_name){
+async function pastPurchaseHandler(product_name) {
     let res = await axios.get(`https://pastpurchaseflipsmart.azurewebsites.net/predict/${product_name}`);
     console.log(res.data);
     let temp = []
@@ -82,14 +122,52 @@ function setNewUser(newUser) {
             </div>
             <div class="add-to-cart">
                 <img src="./images/add to cart.png" alt="" srcset="">
-                <i class ="fas fa-check" style = "display: none;"></i>
+                <i class="fas fa-check" style = "display: none;"></i>
             </div>
         `
+        let blackCart = product.querySelector(".product .add-to-cart img");
+        let checkCart = product.querySelector(".add-to-cart .fas");
+        if (cartObject[newUser[i][1]]) {
+            blackCart.style.display = "none";
+            checkCart.style.display = "block";
+        }
+        else {
+            blackCart.style.display = "block";
+            checkCart.style.display = "none";
+        }
+        blackCart.addEventListener("click", function () {
+            console.log("clicked");
+            blackCart.style.display = "none";
+            checkCart.style.display = "block";
+            cartObject[newUser[i][1]] = newUser[i];
+            localStorage.setItem("cart", JSON.stringify(cartObject));
+        });
+        checkCart.addEventListener("click", function () {
+            blackCart.style.display = "block";
+            checkCart.style.display = "none";
+            delete cartObject[newUser[i][1]];
+            localStorage.setItem("cart", JSON.stringify(cartObject));
+        });
         productsDiv.appendChild(product);
-        
+
     }
 }
+// let blackCart = document.querySelector(".product .add-to-cart img");
+// let checkCart = document.querySelector(".add-to-cart .fas");
 
+// blackCart.addEventListener("click", function () {
+//     console.log("clicked");
+//     blackCart.style.display = "none";
+//     checkCart.style.display = "block";
+//     cartObject[data[i][1]] = [...filteredArr[i], 1];
+//     localStorage.setItem("cart", JSON.stringify(cartObject));
+// });
+// checkCart.addEventListener("click", function () {
+//     blackCart.style.display = "block";
+//     checkCart.style.display = "none";
+//     delete cartObject[filteredArr[i][1]];
+//     localStorage.setItem("cart", JSON.stringify(cartObject));
+// });
 
 console.log(firebase.auth().currentUser);
 let uuid = localStorage.getItem("uuid");
@@ -97,7 +175,7 @@ if (!uuid) {
     window.location.href = "/signIn";
 }
 console.log(uuid);
-if(uuid == '"gyEPIe1VGqfdVjrMSzSYwaPFki62"'){
+if (uuid == '"gyEPIe1VGqfdVjrMSzSYwaPFki62"') {
     newUserHandler();
 }
 async function photoUpload() {
@@ -125,7 +203,7 @@ async function signOutHandler() {
     try {
         await firebase.auth().signOut();
         localStorage.setItem("uuid", "");
-        
+        localStorage.clear();
         window.location.href = "/signIn";
 
     }
@@ -164,13 +242,14 @@ function init() {
                         </div>
                     </div>`
         let cartButton = pdDiv.querySelector(".description-addToCart img");
+
         let checkButton = pdDiv.querySelector(".fas");
         if (cartObject[filteredArr[i][1]]) {
             cartButton.style.display = "none";
             checkButton.style.display = "block";
             similarProductsHandler(filteredArr[i][0]);
             similarUsersHandler(filteredArr[i][0]);
-            if(uuid == '"bbNNQ2cX1ZNRbHL994DWsMCb7JQ2"'){
+            if (uuid == '"bbNNQ2cX1ZNRbHL994DWsMCb7JQ2"') {
                 pastPurchaseHandler(filteredArr[i][0]);
             }
         }
@@ -185,7 +264,7 @@ function init() {
             localStorage.setItem("cart", JSON.stringify(cartObject));
             similarProductsHandler(filteredArr[i][0]);
             similarUsersHandler(filteredArr[i][0]);
-            if(uuid == '"bbNNQ2cX1ZNRbHL994DWsMCb7JQ2"'){
+            if (uuid == '"bbNNQ2cX1ZNRbHL994DWsMCb7JQ2"') {
                 pastPurchaseHandler(filteredArr[i][0]);
             }
         });
