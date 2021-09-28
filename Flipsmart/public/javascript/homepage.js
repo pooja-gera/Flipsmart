@@ -30,12 +30,40 @@ async function newUserHandler() {
 async function similarProductsHandler(product_name){
     let res = await axios.get(`https://flipsmartsimilarproduct.azurewebsites.net/predict/${product_name}`);
     console.log(res.data);
-    
+    let temp = []
     let y = [res.data.item, JSON.parse(res.data.id), JSON.parse(res.data.price), , res.data.imgLink, res.data.size, 1, res.data.api];
         similarProducts.push(y);
+        temp.push(y)
         console.log(similarProducts);
-        setNewUser(similarProducts);
+        setNewUser(temp);
 }
+
+async function similarUsersHandler(product_name){
+    let res = await axios.get(`https://flipsmartsimilarusers.azurewebsites.net/predict/${product_name}`);
+    console.log(res.data);
+    let temp = []
+    for (let x in res.data) {
+        let y = [res.data[x].Name, JSON.parse(x), JSON.parse(res.data[x].Price), , res.data[x].ImgLink, res.data[x].Size, 1, res.data[x].api];
+        similarUsers.push(y);
+        temp.push(y)
+    }
+    console.log(similarUsers);
+    setNewUser(temp);
+}
+
+async function pastPurchaseHandler(product_name){
+    let res = await axios.get(`https://pastpurchaseflipsmart.azurewebsites.net/predict/${product_name}`);
+    console.log(res.data);
+    let temp = []
+    for (let x in res.data) {
+        let y = [res.data[x].Name, JSON.parse(x), JSON.parse(res.data[x].Price), , res.data[x].ImgLink, res.data[x].Size, 1, res.data[x].api];
+        pastPurchase.push(y);
+        temp.push(y)
+    }
+    console.log(pastPurchase);
+    setNewUser(temp);
+}
+
 
 
 function setNewUser(newUser) {
@@ -97,7 +125,9 @@ async function signOutHandler() {
     try {
         await firebase.auth().signOut();
         localStorage.setItem("uuid", "");
+        
         window.location.href = "/signIn";
+
     }
     catch (err) {
         alert("Unable to sign out!");
@@ -138,6 +168,11 @@ function init() {
         if (cartObject[filteredArr[i][1]]) {
             cartButton.style.display = "none";
             checkButton.style.display = "block";
+            similarProductsHandler(filteredArr[i][0]);
+            similarUsersHandler(filteredArr[i][0]);
+            if(uuid == '"bbNNQ2cX1ZNRbHL994DWsMCb7JQ2"'){
+                pastPurchaseHandler(filteredArr[i][0]);
+            }
         }
         else {
             cartButton.style.display = "block";
@@ -148,7 +183,11 @@ function init() {
             checkButton.style.display = "block";
             cartObject[data[i][1]] = [...filteredArr[i], 1];
             localStorage.setItem("cart", JSON.stringify(cartObject));
-            similarProductsHandler(filteredArr[i][0])
+            similarProductsHandler(filteredArr[i][0]);
+            similarUsersHandler(filteredArr[i][0]);
+            if(uuid == '"bbNNQ2cX1ZNRbHL994DWsMCb7JQ2"'){
+                pastPurchaseHandler(filteredArr[i][0]);
+            }
         });
         checkButton.addEventListener("click", function () {
             cartButton.style.display = "block";
