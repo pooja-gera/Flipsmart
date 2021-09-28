@@ -20,20 +20,21 @@ for(let i in items){
         <div class="input-group">
             <div class="button minus">
                 <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[1]">
-                    <i class="ti-minus"></i>
+                <i class="fas fa-minus"></i>
                 </button>
             </div>
             <input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="${items[i][6]}">
             <div class="button plus">
                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
-                    <i class="ti-plus"></i>
+                <i class="fas fa-plus"></i>
+                    
                 </button>
             </div>
         </div>
         <!--/ End Input Order -->
     </td>
     <td class="total-amount" data-title="Total"><span>Rs. ${items[i][2]*items[i][6]}</span></td>
-    <td class="action" data-title="Remove"><a href="#"><i class="ti-trash remove-icon"></i></a></td>
+    <td class="action" data-title="Remove"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
 ` 
 cartSubValue+=(items[i][2]*items[i][6]);
 let minus = tr.querySelector('button[data-type="minus"]')
