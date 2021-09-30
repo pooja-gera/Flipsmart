@@ -1,9 +1,11 @@
 <!--Banner-->
 ![Project Banner](https://res.cloudinary.com/pooja-gera/image/upload/v1630745346/flipsmart-readme_assets/Flipsmart-Readme_Header_ranue3.png)
 
-# Flipsmart - A Smart Shopping Basket by Celestial Biscuit
+# Flipsmart - A Smart Shopping Basket by Celestial Biscuit </b>
+Flipsmart is an attempt to bring the features to life of the robust and popular E-Commerce application - Flipkart. This project was built as a part of the Flipkart GRID 3.0 where participants to build a Smart Bag Creator Challenge for Flipkart Grocery.
 
 <b> Motivation: </b>
+
 
 <b> Solved Problems: </b>
 
