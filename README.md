@@ -27,29 +27,29 @@
 
 ### Dark and Light UI Themed Homepage 
 
-[Section 1 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_1_lcxao6.png)
-[Section 1 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Home_Page_Dark_Section_1_wuhzes.png)
-[Section 2 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_2_m3nqkl.png)
-[Section 2 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Home_Page_Dark_Section_2_acjy5o.png)
-[Section 3 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_3_n1ji6v.png)
-[Section 3 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Home_Page_Dark_Section_3_ggswd0.png)
-[Section 4 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_4_qftqxd.png)
-[Section 4 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Dark_Section_4_afkenm.png)
+![Section 1 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_1_lcxao6.png)
+![Section 1 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Home_Page_Dark_Section_1_wuhzes.png)
+![Section 2 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_2_m3nqkl.png)
+![Section 2 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Home_Page_Dark_Section_2_acjy5o.png)
+![Section 3 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_3_n1ji6v.png)
+![Section 3 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Home_Page_Dark_Section_3_ggswd0.png)
+![Section 4 Light](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Section_4_qftqxd.png)
+![Section 4 Dark](https://res.cloudinary.com/pooja-gera/image/upload/v1632994332/flipsmart-readme_assets/Home_Page_Dark_Section_4_afkenm.png)
 
 ### Sign In and Sign Up with Email 
 
-[Sign In](https://res.cloudinary.com/pooja-gera/image/upload/v1632994333/flipsmart-readme_assets/Sign_In_rtyjei.png)
-[Sign Up](https://res.cloudinary.com/pooja-gera/image/upload/v1632994333/flipsmart-readme_assets/Sign_Up_wssxbv.png)
+![Sign In](https://res.cloudinary.com/pooja-gera/image/upload/v1632994333/flipsmart-readme_assets/Sign_In_rtyjei.png)
+![Sign Up](https://res.cloudinary.com/pooja-gera/image/upload/v1632994333/flipsmart-readme_assets/Sign_Up_wssxbv.png)
 
 ### Products Page 
 
-[Flipsmart Bag Empty](https://res.cloudinary.com/pooja-gera/image/upload/v1632994334/flipsmart-readme_assets/Products_Page_Empty_Flipsmart_mukuts.png)
-[Flipsmart Bag Full](https://res.cloudinary.com/pooja-gera/image/upload/v1632994334/flipsmart-readme_assets/Products_Page_Filled_Flipsmart_wkjpmb.png)
+![Flipsmart Bag Empty](https://res.cloudinary.com/pooja-gera/image/upload/v1632994334/flipsmart-readme_assets/Products_Page_Empty_Flipsmart_mukuts.png)
+![Flipsmart Bag Full](https://res.cloudinary.com/pooja-gera/image/upload/v1632994334/flipsmart-readme_assets/Products_Page_Filled_Flipsmart_wkjpmb.png)
 
 ### Cart Page 
 
-[Cart](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Cart_duvpn2.png)
-[Payment](https://res.cloudinary.com/pooja-gera/image/upload/v1632994333/flipsmart-readme_assets/Payment_roc0sy.png)
+![Cart](https://res.cloudinary.com/pooja-gera/image/upload/v1632994331/flipsmart-readme_assets/Cart_duvpn2.png)
+![Payment](https://res.cloudinary.com/pooja-gera/image/upload/v1632994333/flipsmart-readme_assets/Payment_roc0sy.png)
 
 [(Back to top)](#table-of-contents)
 
