@@ -95,37 +95,6 @@ nodemon app.js
 
 Voila! Your application starts working. 
 
-# Tech Stack Selection 
-
-
-
-[(Back to top)](#table-of-contents)
-
-# Usage of Agile Methodology 
-
-
-
-[(Back to top)](#table-of-contents)
-
-# Challenges Faced
-
-
-[(Back to top)](#table-of-contents)
-
-# Future Scope
-[(Back to top)](#table-of-contents)
-
-# Bug Log
-
-
-[(Back to top)](#table-of-contents)
-
-# Try The Web Application 
-
-Try the MS Teams Clone Web App [here](#).
-Please give it a little time to load.
-
-[(Back to top)](#table-of-contents)
 
 # Support and Contact 
 
