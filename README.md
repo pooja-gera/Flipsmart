@@ -4,14 +4,30 @@
 # Flipsmart - A Smart Shopping Basket by Celestial Biscuit </b>
 Flipsmart is an attempt to bring the features to life of the robust and popular E-Commerce application - Flipkart. This project was built as a part of the Flipkart GRID 3.0 where participants to build a Smart Bag Creator Challenge for Flipkart Grocery.
 
-<b> Motivation: </b>
+<b> Motivation: </b><br/>
 With online shopping and e-commerce becoming an integral part of our day-to-day life, it is time that Artificial Intelligence take root into the experience of online shopping. Flipsmart is built to provide 
 
-<b> Solved Problems: </b>
+<b> Solved Problems: </b><br/>
+#### 1. Recommending items based on Past Purchase History
+- There is a repetition that happens while buying grocery items and a user's past purchase history is extremely crucial for offering good recommendations. 
+- For recommendations on the past order, there is a need for an association between the current item and the previously bought items. Apriori Algorithm of ARL is used to find the association among products.
 
-<b> Learnings: </b>
+#### 2. Recommending items based on ratings from Similar Users
+- People from the same region have similar staple food and dietary habits hence having similar product needs became the basis for us taking up this use case.
+- To find the required similarities between the users, the Memory-based Collaborative filtering technique was used by implementing the nearest neighbors algorithm thereby identifying similar users with the common trends using the user rating data.
 
-<img src="https://image.flaticon.com/icons/png/512/1384/1384060.png" alt="youtube-icon" width="50px"> [Watch the Demo on Youtube (To Be Added)](#) 
+#### 3. Recommending items to the New Users based on Product Ratings
+- Since a new user has no previous purchase history, there is no understanding about their buying habits before, hence it is only fair to show them the best-rated products to pique their interest. 
+- In order to get the Top 10 recommendations based on the ratings by other users, products were filtered on the basis of a combination of a number of ratings and average ratings of the product by all the other users.
+
+#### 4. Recommending items based on products similar to items in the cart
+- An alternate choice of items that the user adds to the cart provides a variety of options for the same item to the user to choose and buy from. 
+- All the similar items were grouped together into a single category. When an item was added in the cart, a random item for the corresponding category was recommended.
+
+
+<!-- <b> Learnings: </b>
+
+<img src="https://image.flaticon.com/icons/png/512/1384/1384060.png" alt="youtube-icon" width="50px"> [Watch the Demo on Youtube (To Be Added)](#)  -->
 
 # Table of contents
 
@@ -91,7 +107,7 @@ nodemon app.js
 Voila! Your application starts working. 
 
 # Try The Web Application
-[Flipsmart](http://flipsmartgrid.herokuapp.com/)
+[Flipsmart](http://flipsmartgrid.herokuapp.com/)<br/>
 [(Back to top)](#table-of-contents)
 
 # Support and Contact 
