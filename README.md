@@ -112,10 +112,16 @@ Voila! Your application starts working.
 
 # Support and Contact 
 
-Email To: 
+<!-- Email To: 
 developergera@gmail.com
 nishthagoyal8@gmail.com
-gaurisharsrivastava@gmail.com
+gaurisharsrivastava@gmail.com -->
+| S.No. | Name                  | Email Id                      | GitHub Username:octocat:                             |
+| ----- | ------------------    | ----------------------------- | ---------------------------------------------------- |
+| 1.    | Pooja Gera            | developergera@gmail.com       | [@pooja-gera](https://github.com/pooja-gera)       |
+| 2.    | Gaurisha R Srivastava | gaurisharsrivastava@gmail.com | [@Gaurisha21](https://github.com/Gaurisha21)         |
+| 3.    | Nishtha Goyel         | nishthagoyal8@gmail.com       | [@Nishtha0801](https://github.com/Nishtha0801)       |
+
 
 [(Back to top)](#table-of-contents)
 
