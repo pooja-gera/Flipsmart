@@ -17,15 +17,10 @@ With online shopping and e-commerce becoming an integral part of our day-to-day 
 
 - [Features of the Application (With Screenshots)](#features-of-the-application-with-demo)
 - [Installation](#installation)
-- [Tech Stack Selection](#tech-stack-selection)
-- [Usage of Agile Methodology](#usage-of-agile-methodology)
-- [Challenges Faced](#challenges-faced)
-- [Future Scope](#future-scope)
-- [Bug Log](#bug-log)
 - [Try The Web Application](#try-the-web-application)
 - [Support and Contact](#support-and-contact)
 
-# Features of the Application (With Demo)
+# Features of the Application (With Screenshots)
 
 ### Dark and Light UI Themed Homepage 
 
@@ -95,6 +90,9 @@ nodemon app.js
 
 Voila! Your application starts working. 
 
+# Try The Web Application
+[Flipsmart](http://flipsmartgrid.herokuapp.com/)
+[(Back to top)](#table-of-contents)
 
 # Support and Contact 
 
